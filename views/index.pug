@@ -1,0 +1,15 @@
+extends layout.pug
+
+block content
+
+  article.portfolio-intro
+    h1 The best portfolio in the world!
+    p A place to showcase my works~
+  article.portfolio-project-thumbs
+    .projects-box.box.grid
+      each project in projects
+        .cell
+          a(href=`/project/${project.id}`)
+            img.thumbnail(src=`${project.image_urls[0]}`, alt=`${project.slug} image`)
+            h5= project.project_name.toUpperCase()
+
